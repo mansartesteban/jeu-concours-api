@@ -1,0 +1,32 @@
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model User {
+    id          String   @id @default(cuid())
+    createdAt   DateTime @default(now())
+    lastLoginAt DateTime @default(now())
+    // Adresse e‑mail (facultative mais pratique)
+    email       String?  @unique
+}
+
+model Entrant {
+    id        String   @id @default(cuid())
+    createdAt DateTime @default(now())
+
+    // Champs communs
+    ville String?
+
+    // Cas Instagram
+    instagramHandle String? @unique
+
+    // Cas formulaire classique
+    nom    String?
+    prenom String?
+    email  String? @unique
+}
