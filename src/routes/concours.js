@@ -1,7 +1,5 @@
 import { z } from "zod";
 import { sendConfirmationEmail } from "../utils/mails/jeu-concours.js";
-import { PrismaClient } from "@prisma/client";
-import { faker } from "@faker-js/faker";
 
 export default async function inscriptionRoute(app) {
   const schema = z
@@ -88,33 +86,4 @@ export default async function inscriptionRoute(app) {
       }
     }
   );
-
-  // app.get("/test", () => {
-  //   async function main() {
-  //     const TOTAL = 50;
-
-  //     for (let i = 0; i < TOTAL; i++) {
-  //       const usePseudo = Math.random() > 0.5;
-
-  //       await app.prisma.Entrant.create({
-  //         data: {
-  //           prenom: faker.person.firstName(),
-  //           nom: faker.person.lastName(),
-  //           instagramHandle: usePseudo ? faker.internet.userName() : null,
-  //           email: faker.internet.email(),
-  //           createdAt: faker.date.past(),
-  //         },
-  //       });
-  //     }
-
-  //     console.log(`✅ ${TOTAL} utilisateurs insérés`);
-  //   }
-
-  //   main()
-  //     .catch((e) => {
-  //       console.error(e);
-  //       process.exit(1);
-  //     })
-  //     .finally(() => {});
-  // });
 }
