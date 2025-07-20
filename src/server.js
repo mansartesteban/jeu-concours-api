@@ -1,14 +1,11 @@
+import "./env.js";
+
 import Fastify from "fastify";
-import dotenv from "dotenv";
 import cors from "@fastify/cors";
-import fastifyMorgan from "morgan";
 import inscriptionRoute from "./routes/concours.js";
 import dbPlugin from "./plugins/db.js";
-import prismaPlugin from "./plugins/prisma.js";
 import authRoutes from "./routes/auth.js";
 import fastifyJwt from "@fastify/jwt";
-
-dotenv.config();
 
 const app = Fastify({ logger: true });
 
