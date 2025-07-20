@@ -6,7 +6,7 @@ const authorizedMails = [
   "chronos7.asso@gmail.com",
 ];
 
-const authRoutes: FastifyPluginAsync = async (app) => {
+const authRoutes = async (app) => {
   app.post("/logout", async (req, reply) => {
     // Pour le front, on renvoie juste un 200 OK
     return { message: "Logged out" };

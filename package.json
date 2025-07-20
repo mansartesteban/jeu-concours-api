@@ -4,8 +4,8 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "dev": "pnpm i && tsx watch src/server.ts",
-    "start": "node src/server.ts",
+    "dev": "pnpm i && tsx watch src/server.js",
+    "start": "node src/server.js",
     "build": "echo 'Nothing to build for backend'",
     "prisma:studio": "npx prisma studio",
     "prisma:migrate": "npx prisma migrate dev",

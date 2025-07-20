@@ -6,9 +6,3 @@ const prisma = new PrismaClient();
 export default fp(async (app) => {
   app.decorate("prisma", prisma);
 });
-
-declare module "fastify" {
-  interface FastifyInstance {
-    prisma: PrismaClient;
-  }
-}
