@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "pnpm i && tsx watch src/server.js",
     "start": "node src/server.js",
-    "build": "echo 'Nothing to build for backend'",
+    "build": "pnpm i",
     "prisma:studio": "npx prisma studio",
     "prisma:migrate": "npx prisma migrate dev",
     "prisma:deploy": "npx prisma migrate deploy",
