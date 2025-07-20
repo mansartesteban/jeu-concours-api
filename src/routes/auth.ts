@@ -7,6 +7,11 @@ const authorizedMails = [
 ];
 
 const authRoutes: FastifyPluginAsync = async (app) => {
+  app.post("/logout", async (req, reply) => {
+    // Pour le front, on renvoie juste un 200 OK
+    return { message: "Logged out" };
+  });
+
   app.get("/oauth/callback", async (req, reply) => {
     const token =
       await app.googleOAuth2.getAccessTokenFromAuthorizationCodeFlow(req);

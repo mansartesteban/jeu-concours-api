@@ -75,7 +75,8 @@ export default async function inscriptionRoute(app) {
           orderBy: { createdAt: "desc" },
         });
         return reply.send(
-          entrants.map(({ nom, prenom, instagramHandle }) => ({
+          entrants.map(({ nom, prenom, instagramHandle, id }) => ({
+            id,
             firstname: prenom,
             lastname: nom,
             pseudo: instagramHandle,
@@ -88,32 +89,32 @@ export default async function inscriptionRoute(app) {
     }
   );
 
-  app.get("/test", () => {
-    async function main() {
-      const TOTAL = 50;
+  // app.get("/test", () => {
+  //   async function main() {
+  //     const TOTAL = 50;
 
-      for (let i = 0; i < TOTAL; i++) {
-        const usePseudo = Math.random() > 0.5;
+  //     for (let i = 0; i < TOTAL; i++) {
+  //       const usePseudo = Math.random() > 0.5;
 
-        await app.prisma.Entrant.create({
-          data: {
-            prenom: faker.person.firstName(),
-            nom: faker.person.lastName(),
-            instagramHandle: usePseudo ? faker.internet.userName() : null,
-            email: faker.internet.email(),
-            createdAt: faker.date.past(),
-          },
-        });
-      }
+  //       await app.prisma.Entrant.create({
+  //         data: {
+  //           prenom: faker.person.firstName(),
+  //           nom: faker.person.lastName(),
+  //           instagramHandle: usePseudo ? faker.internet.userName() : null,
+  //           email: faker.internet.email(),
+  //           createdAt: faker.date.past(),
+  //         },
+  //       });
+  //     }
 
-      console.log(`✅ ${TOTAL} utilisateurs insérés`);
-    }
+  //     console.log(`✅ ${TOTAL} utilisateurs insérés`);
+  //   }
 
-    main()
-      .catch((e) => {
-        console.error(e);
-        process.exit(1);
-      })
-      .finally(() => {});
-  });
+  //   main()
+  //     .catch((e) => {
+  //       console.error(e);
+  //       process.exit(1);
+  //     })
+  //     .finally(() => {});
+  // });
 }
