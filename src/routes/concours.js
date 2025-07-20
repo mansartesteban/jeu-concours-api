@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { sendConfirmationEmail } from "../utils/mails/jeu-concours";
+import { sendConfirmationEmail } from "../utils/mails/jeu-concours.js";
 import { PrismaClient } from "@prisma/client";
 import { faker } from "@faker-js/faker";
 
