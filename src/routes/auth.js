@@ -57,7 +57,7 @@ const authRoutes = async (app) => {
       auth: fastifyOauth2.GOOGLE_CONFIGURATION,
     },
     startRedirectPath: "/oauth",
-    callbackUri: process.env.CLIENT_URL + "/auth/oauth/callback",
+    callbackUri: process.env.BASE_URL + "/auth/oauth/callback",
   });
 };
 export default authRoutes;
