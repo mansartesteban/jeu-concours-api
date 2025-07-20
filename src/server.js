@@ -24,8 +24,9 @@ app.register(fastifyJwt, {
 });
 await app.register(inscriptionRoute);
 await app.register(authRoutes, { prefix: "/auth" });
+const PORT = process.env.PORT || 3000;
 
-app.listen({ port: Number(process.env.PORT) || 3000 }, (err, addr) => {
+app.listen({ port: PORT, host: "0.0.0.0" }, (err, addr) => {
   if (err) {
     app.log.error(err);
     process.exit(1);
