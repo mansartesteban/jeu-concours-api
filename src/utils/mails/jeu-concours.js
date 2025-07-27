@@ -25,9 +25,10 @@ export async function sendConfirmationEmail(to, pseudo = "participant") {
 
     <ul style="text-align: left; max-width: 400px; margin: 0 auto 20px; color: #444; font-size: 15px; line-height: 1.6;">
       <li>📸 Un shooting photo offert dans un rayon de 30 km autour de Beauvais</li>
-      <li>🎬 Une participation en tant que public à un de nos futurs tournages</li>
-      <li>🎭 Une participation en tant que figurant dans un de nos futurs tournages</li>
+      <li>🎬 Une participation en tant que public à un de nos futurs tournages*</li>
+      <li>🎭 Une participation en tant que figurant dans un de nos futurs tournages*</li>
       <li>🖼️ Une photo dédicacée de l'équipe</li>
+      <li>🖼️ Deux places offertes pour le prochain événement organisé par Chronos7</li>
     </ul>
 
     <p style="font-size: 16px; color: #333;">
@@ -42,6 +43,11 @@ export async function sendConfirmationEmail(to, pseudo = "participant") {
       👉 <a href="https://www.instagram.com/chronos7_asso/" style="color: #8e44ad;">@chronos7_asso</a>
     </p>
 
+    <hr style="margin: 30px 0; border: none; border-top: 1px solid #eee;" />
+    <p style="font-size: 13px; color: #999;">
+      *Les frais de déplacement et de restauration sont à la charge du gagnant pour les shootings et tournages.<br />
+      Les dates et lieux seront à convenir avec l'équipe de Chronos7.
+    </p>
     <hr style="margin: 30px 0; border: none; border-top: 1px solid #eee;" />
 
     <p style="font-size: 13px; color: #999;">
